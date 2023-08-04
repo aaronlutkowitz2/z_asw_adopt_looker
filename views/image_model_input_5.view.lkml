@@ -85,6 +85,7 @@ view: image_model_input_5 {
       {% else %} ${avg_dp}
       {% endif %}
     ;;
+    value_format_name: percent_2
   }
 
   measure: avg_dp {
