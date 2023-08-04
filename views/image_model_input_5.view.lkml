@@ -166,5 +166,11 @@ view: image_model_input_5 {
     filters: [is_same: "No"]
   }
 
+  measure: dp_dynamic_difference {
+    type: number
+    sql: ${dp_dynamic_same} - ${dp_dynamic_not_same} ;;
+    value_format_name: percent_2
+  }
+
 
 }
