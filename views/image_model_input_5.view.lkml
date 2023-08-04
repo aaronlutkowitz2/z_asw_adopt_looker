@@ -15,21 +15,25 @@ view: image_model_input_5 {
   }
 
   dimension: dot_product {
+    group_label: "Z"
     type: number
     sql: ${TABLE}.dot_product ;;
   }
 
   dimension: dot_product10 {
+    group_label: "Z"
     type: number
     sql: ${TABLE}.dot_product10 ;;
   }
 
   dimension: dot_product100 {
+    group_label: "Z"
     type: number
     sql: ${TABLE}.dot_product100 ;;
   }
 
   dimension: id_neighbor {
+    group_label: "Z"
     type: number
     sql: ${TABLE}.id_neighbor ;;
   }
@@ -53,6 +57,12 @@ view: image_model_input_5 {
     type: string
     sql: ${TABLE}.value_neighbor ;;
   }
+
+  dimension: is_same {
+    type: yesno
+    sql: ${value} = ${value_neighbor} ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [id]
