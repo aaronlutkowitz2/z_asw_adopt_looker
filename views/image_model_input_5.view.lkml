@@ -70,7 +70,7 @@ view: image_model_input_5 {
 
   parameter: dp_num {
     type: unquoted
-    default_value: "dp"
+    default_value: "avg_dp100"
     allowed_value: {label: "DP" value: "avg_dp" }
     allowed_value: {label: "DP 10" value: "avg_dp10" }
     allowed_value: {label: "DP 100" value: "avg_dp100" }
