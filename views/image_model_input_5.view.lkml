@@ -104,5 +104,67 @@ view: image_model_input_5 {
     value_format_name: percent_2
   }
 
+  measure: dp_dynamic_same {
+    type: number
+    sql:
+      {% if    dp_num._parameter_value == 'avg_dp' %} ${avg_dp_same}
+      {% elsif dp_num._parameter_value == 'avg_dp10' %} ${avg_dp10_same}
+      {% elsif dp_num._parameter_value == 'avg_dp100' %} ${avg_dp100_same}
+      {% else %} ${avg_dp_same}
+      {% endif %}
+    ;;
+    value_format_name: percent_2
+  }
+
+  measure: avg_dp_same {
+    type: average
+    sql: ${dot_product} ;;
+    value_format_name: percent_2
+    filters: [is_same: "Yes"]
+  }
+  measure: avg_dp10_same {
+    type: average
+    sql: ${dot_product10} ;;
+    value_format_name: percent_2
+    filters: [is_same: "Yes"]
+  }
+  measure: avg_dp100_same {
+    type: average
+    sql: ${dot_product100} ;;
+    value_format_name: percent_2
+    filters: [is_same: "Yes"]
+  }
+
+  measure: dp_dynamic_not_same {
+    type: number
+    sql:
+      {% if    dp_num._parameter_value == 'avg_dp' %} ${avg_dp_not_same}
+      {% elsif dp_num._parameter_value == 'avg_dp10' %} ${avg_dp10_not_same}
+      {% elsif dp_num._parameter_value == 'avg_dp100' %} ${avg_dp100_not_same}
+      {% else %} ${avg_dp_not_same}
+      {% endif %}
+    ;;
+    value_format_name: percent_2
+  }
+
+  measure: avg_dp_not_same {
+    type: average
+    sql: ${dot_product} ;;
+    value_format_name: percent_2
+    filters: [is_same: "No"]
+  }
+  measure: avg_dp10_not_same {
+    type: average
+    sql: ${dot_product10} ;;
+    value_format_name: percent_2
+    filters: [is_same: "No"]
+  }
+  measure: avg_dp100_not_same {
+    type: average
+    sql: ${dot_product100} ;;
+    value_format_name: percent_2
+    filters: [is_same: "No"]
+  }
+
 
 }
