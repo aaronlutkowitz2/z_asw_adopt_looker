@@ -49,12 +49,13 @@ view: image_model_input_5 {
   }
 
   dimension: value {
+    label: "Predicted Value"
     type: string
     sql: ${TABLE}.value ;;
   }
 
   dimension: value_neighbor {
-    label: "Predicted Value"
+    label: "Actual Value"
     type: string
     sql: ${TABLE}.value_neighbor ;;
   }
