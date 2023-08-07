@@ -54,6 +54,7 @@ view: image_model_input_5 {
   }
 
   dimension: value_neighbor {
+    label: "Predicted Value"
     type: string
     sql: ${TABLE}.value_neighbor ;;
   }
