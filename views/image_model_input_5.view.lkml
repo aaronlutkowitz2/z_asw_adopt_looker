@@ -79,6 +79,7 @@ view: image_model_input_5 {
   }
 
   measure: dp_dynamic {
+    label: "Sim Score"
     type: number
     sql:
       {% if    dp_num._parameter_value == 'avg_dp' %} ${avg_dp}
